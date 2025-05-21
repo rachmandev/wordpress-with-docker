@@ -12,6 +12,20 @@ services:
       MYSQL_DATABASE: wordpress
     volumes:
       - db_data:/var/lib/mysql
+  phpmyadmin:
+    image: phpmyadmin:latest
+    container_name: app-phpmyadmin
+    restart: always
+    environment:
+      PMA_HOST: database
+
+  ubuntu:
+    image: ubuntu:latest
+    container_name: ubuntu
+    restart: always
+    tty: true
+    stdin_open: true
+    # command: bash -c "apt install hping3 -y"
 
   wordpress:
     image: wordpress:php8.3-fpm
