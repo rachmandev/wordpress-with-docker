@@ -37,4 +37,4 @@ services:
 networks:
   traefik:
     name: traefik
-    driver: bidge
+    driver: bridge
